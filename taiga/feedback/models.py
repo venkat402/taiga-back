@@ -25,6 +25,8 @@ class FeedbackEntry(models.Model):
                                  verbose_name=_('full name'))
     email = models.EmailField(null=False, blank=False, max_length=255,
                               verbose_name=_('email address'))
+    subject = models.CharField(max_length=255,null=False, blank=False,default='',
+                               verbose_name=_("subject"))
     comment = models.TextField(null=False, blank=False,
                                verbose_name=_("comment"))
     created_date = models.DateTimeField(null=False, blank=False, auto_now_add=True,
