@@ -58,6 +58,8 @@ class Issue(OCCModelMixin, WatchedModelMixin, BlockedMixin, TaggedMixin, DueDate
                                          verbose_name=_("finished date"))
     subject = models.TextField(null=False, blank=False,
                                verbose_name=_("subject"))
+    team_members = models.TextField(null=True, blank=True,
+                               verbose_name=_("team members"))
     description = models.TextField(null=False, blank=True, verbose_name=_("description"))
     assigned_to = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True,
                                     default=None, related_name="issues_assigned_to_me",
