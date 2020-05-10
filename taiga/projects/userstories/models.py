@@ -93,6 +93,8 @@ class UserStory(OCCModelMixin, WatchedModelMixin, BlockedMixin, TaggedMixin, Due
                                        verbose_name=_("finish date"))
     subject = models.TextField(null=False, blank=False,
                                verbose_name=_("subject"))
+    team_members = models.TextField(null=True, blank=True,
+                               verbose_name=_("team members"))
     description = models.TextField(null=False, blank=True, verbose_name=_("description"))
     assigned_to = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True,
                                     default=None, related_name="userstories_assigned_to_me",
